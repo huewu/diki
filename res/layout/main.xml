@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/hello" />
+    
+    <Button
+        android:id="@+id/post"
+        android:onClick="handleClick"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:text="@string/post"/>        
+    
+    <Button
+        android:id="@+id/login"
+        android:onClick="handleClick"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/login" />
+    
+    <Button
+        android:id="@+id/logout"
+        android:onClick="handleClick"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/logout" />
+    
+    <Button
+        android:id="@+id/me"
+        android:onClick="handleClick"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/my_info" />    
+    
+
+</LinearLayout>

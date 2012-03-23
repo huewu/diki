@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+	<com.huewu.study.facebooklogin.ImageEditorView
+	    android:id="@+id/editor"
+	    android:scaleType="matrix"
+	    android:background="#333333"
+	    android:padding="5dp"
+	    android:layout_margin="10dp"
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent">
+	</com.huewu.study.facebooklogin.ImageEditorView>    
+   
+</FrameLayout>
