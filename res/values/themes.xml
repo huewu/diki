@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <style name="Theme.Diki" parent="Theme.Sherlock.Light">
+        <item name="actionBarStyle">@style/Widget.Diki.ActionBar</item>
+        <item name="android:actionBarStyle">@style/Widget.Diki.ActionBar</item>        
+        <item name="actionBarTabStyle">@style/Widget.Diki.ActionBar.TabView</item>
+        <item name="android:actionBarTabStyle">@style/Widget.Diki.ActionBar.TabView</item>        
+        <item name="actionBarTabTextStyle">@style/Widget.Diki.ActionBar.TabText</item>
+        <item name="android:actionBarTabTextStyle">@style/Widget.Diki.ActionBar.TabText</item>
+    </style>
+        
+    <style name="Widget.Diki.ActionBar" parent="Widget.Sherlock.ActionBar">
+        <item name="titleTextStyle">@style/TextAppearance.Diki.Widget.ActionBar.Title</item>
+        <item name="android:titleTextStyle">@style/TextAppearance.Diki.Widget.ActionBar.Title</item>
+    </style>    
+        
+    <style name="Widget.Diki.ActionBar.TabView" parent="Widget.Sherlock.ActionBar.TabView">
+        <item name="android:background">@drawable/tab_bg_selector</item>
+    </style>
+    
+    <style name="Widget.Diki.ActionBar.TabText" parent="Widget.Sherlock.ActionBar.TabText">
+        <item name="android:textColor">#666666</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+    
+    <style name="TextAppearance.Diki.Widget.ActionBar.Title" parent="Widget">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">?android:attr/textColorPrimaryInverse</item>
+    </style>
+    
+    <style name="Widget.Diki.Edit.Button" parent="Widget">
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/btn_bg_shape</item>
+        <item name="android:textColor">#222222</item>
+    </style>
+    
+</resources>

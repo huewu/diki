@@ -2,10 +2,11 @@
 <resources>
 
     <string name="hello">Hello World, FacebookLoginActivity!</string>
-    <string name="app_name">FacebookLogin</string>
+    <string name="app_name">Doodle WiKi</string>
     <string name="login">Login</string>
     <string name="logout">Logout</string>
     <string name="my_info">My Info</string>
     <string name="post">Post</string>
+    <string name="new_doodle">New Doodle</string>
 
 </resources>

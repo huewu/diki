@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.huewu.study.facebooklogin"
+    package="com.huewu.study.diki"
     android:versionCode="1"
     android:versionName="1.0" >
 
     <uses-sdk android:minSdkVersion="10" />
+    <uses-sdk android:targetSdkVersion="10" />
     <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name" >
         <activity
-            android:name=".FacebookLoginActivity"
+            android:name=".DoodleBrowser"
+            android:theme="@style/Theme.Diki"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,7 +22,8 @@
         </activity>
         
         <activity
-            android:name =".ImageEditor">
+            android:theme="@style/Theme.Diki"
+       		android:name =".DoodleEditor">
             <intent-filter>
                 <action android:name="android.intent.action.SEND"/>
                 <action android:name="android.intent.action.SENDTO"/>

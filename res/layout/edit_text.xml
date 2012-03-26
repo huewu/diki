@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal" >
+    <Button 
+        style="@style/Widget.Diki.Edit.Button"
+        android:id="@+id/size" 
+        android:text="Size" 
+        android:layout_weight="1"
+        android:layout_margin="13dp"
+        android:layout_width="match_parent" 
+        android:layout_height="match_parent"/>
+    
+    <Button 
+        style="@style/Widget.Diki.Edit.Button"
+        android:id="@+id/ft_color" 
+        android:text="Font Color" 
+        android:layout_margin="13dp"
+        android:layout_weight="1"
+        android:layout_width="match_parent" 
+        android:layout_height="match_parent"/>
+    
+    <Button 
+        style="@style/Widget.Diki.Edit.Button"
+        android:id="@+id/bg_color" 
+        android:text="Background Color" 
+        android:layout_weight="1"
+        android:layout_margin="13dp"
+        android:layout_width="match_parent" 
+        android:layout_height="match_parent"/>
+    
+</LinearLayout>
