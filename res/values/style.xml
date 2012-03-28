@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+<style name="VinglePartyListContainer">
+    <item name ="android:background">@drawable/rect_tile</item>
+</style>
+    
+<style name="VinglePartyListText">
+    <item name ="android:textSize">18sp</item>
+    <item name ="android:textStyle">bold</item>
+    <item name ="android:textColor">#555555</item>
+    <item name ="android:paddingLeft">10dp</item>
+    <item name ="android:gravity">center_vertical</item>
+    <item name ="android:layout_width">match_parent</item>
+    <item name ="android:layout_height">match_parent</item>
+</style>
+
+<style name="VinglePartyListImage">
+    <item name ="android:paddingLeft">10dp</item>
+    <item name ="android:paddingRight">10dp</item>
+    <item name ="android:paddingTop">10dp</item>
+    <item name ="android:paddingBottom">10dp</item>
+    <item name ="android:src">@android:drawable/picture_frame</item>
+    <item name ="android:layout_width">160dp</item>
+    <item name ="android:layout_height">160dp</item>    
+</style>
+</resources>

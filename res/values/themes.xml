@@ -20,8 +20,10 @@
     </style>
     
     <style name="Widget.Diki.ActionBar.TabText" parent="Widget.Sherlock.ActionBar.TabText">
-        <item name="android:textColor">#666666</item>
-        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#777777</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:paddingTop">20dp</item>
     </style>
     
     <style name="TextAppearance.Diki.Widget.ActionBar.Title" parent="Widget">
@@ -34,7 +36,7 @@
         <item name="android:paddingLeft">10dp</item>
         <item name="android:paddingRight">10dp</item>
         <item name="android:gravity">center</item>
-        <item name="android:background">@drawable/btn_bg_shape</item>
+        <item name="android:background">@drawable/btn_bg_shape_selector</item>
         <item name="android:textColor">#222222</item>
     </style>
     

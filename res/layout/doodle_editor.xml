@@ -1,27 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/container"
+    android:background="#cccccc"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
-	
-	<ViewFlipper 
-	    android:id="@+id/edit_ctx_pannel"
+    
+    <include 
+        android:id="@+id/edit_menu" layout="@layout/edit_menu"
 	    android:background="@drawable/rect_tile"
 	    android:padding="2dp"
 	    android:layout_margin="2dp"
 	    android:layout_alignParentBottom="true"
 	    android:layout_width="match_parent"
-	    android:layout_height="80dp">
-	    <include android:id="@+id/edit_navi" layout="@layout/edit_navi"/>
-	    <include android:id="@+id/edit_text" layout="@layout/edit_text"/>
-	    <include android:id="@+id/edit_draw" layout="@layout/edit_draw"/>
-   	</ViewFlipper>
+	    android:layout_height="80dp"/>
     
 	<com.huewu.study.diki.view.ImageEditorView
 	    android:id="@+id/editor"
 	    android:background="#333333"
-	    android:layout_above="@id/edit_ctx_pannel"
+	    android:layout_above="@id/edit_menu"
 	    android:padding="5dp"
 	    android:layout_marginLeft="10dp"
 	    android:layout_marginRight="10dp"

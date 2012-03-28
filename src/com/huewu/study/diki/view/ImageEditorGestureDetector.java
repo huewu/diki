@@ -24,6 +24,8 @@ import android.view.ScaleGestureDetector;
 public abstract class ImageEditorGestureDetector {
     private static final String TAG = "ImageEditorDetector";
     
+	public static final long LONG_CLICK_MARGIN = 1000;
+    
     OnGestureListener mListener;
     
     public static ImageEditorGestureDetector newInstance(Context context,
@@ -46,9 +48,14 @@ public abstract class ImageEditorGestureDetector {
     
     public abstract boolean onTouchEvent(MotionEvent ev);
     
+    public abstract float getLastTouchX();
+
+    public abstract float getLastTouchY();
+    
+    
     public interface OnGestureListener {
         public void onDrag(float dx, float dy);
-        public void onScale(float scaleFactor);
+        public void onScale(float scaleFactor, float px, float py);
     }
 
     private static class CupcakeDetector extends ImageEditorGestureDetector {
@@ -90,6 +97,16 @@ public abstract class ImageEditorGestureDetector {
             }
             return true;
         }
+
+		@Override
+		public float getLastTouchX() {
+			return mLastTouchX;
+		}
+
+		@Override
+		public float getLastTouchY() {
+			return mLastTouchY;
+		}
     }
     
     private static class EclairDetector extends CupcakeDetector {
@@ -141,11 +158,21 @@ public abstract class ImageEditorGestureDetector {
         private ScaleGestureDetector mDetector;
         
         public FroyoDetector(Context context) {
+        	
             mDetector = new ScaleGestureDetector(context,
                     new ScaleGestureDetector.SimpleOnScaleGestureListener() {
-                @Override public boolean onScale(ScaleGestureDetector detector) {
-                    mListener.onScale(detector.getScaleFactor());
-                    return true;
+            	
+            		@Override 
+            		public boolean onScale(ScaleGestureDetector detector) {
+            			
+            			if( detector.isInProgress() )
+            			{
+                			mListener.onScale(
+                					detector.getScaleFactor(), 
+                					detector.getFocusX(), 
+                					detector.getFocusY());
+            			}
+            			return true;
                 }
             });
         }

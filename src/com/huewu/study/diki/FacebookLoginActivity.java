@@ -15,9 +15,12 @@ import com.facebook.android.Facebook.DialogListener;
 import com.facebook.android.FacebookError;
 
 import android.app.Activity;
+import android.content.ComponentName;
 import android.content.Intent;
+import android.content.ServiceConnection;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.IBinder;
 import android.util.Log;
 import android.view.View;
 
@@ -33,7 +36,7 @@ public class FacebookLoginActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
+        //setContentView(R.layout.main);
         
         /*
          * get existing access_token if any
@@ -47,13 +50,36 @@ public class FacebookLoginActivity extends Activity {
         if(expires != 0){
         	facebook.setAccessExpires(expires);
         }
-        	
+               
         if(!facebook.isSessionValid()){
         	authorize();
         }
+        else 
+        {
+        	//bind();
+        }
         
-        mAsyncRunner = new AsyncFacebookRunner(facebook);
+        //mAsyncRunner = new AsyncFacebookRunner(facebook);
     }
+    
+	private void bind() {
+		Intent i = new Intent(this, FacebookService.class);
+		bindService(i, new ServiceConnection() {
+
+			@Override
+			public void onServiceDisconnected(ComponentName name) {
+			}
+			
+			@Override
+			public void onServiceConnected(ComponentName name, IBinder service) {
+				FacebookService s= ((FacebookService.LocalBinder) service).getService();
+				s.setFacebook(facebook);
+				
+	        	Intent i = new Intent(FacebookLoginActivity.this, DoodleBrowser.class);
+	        	startActivity(i);
+			}
+		}, BIND_AUTO_CREATE);
+	}    
     
     @Override
     protected void onResume() {
@@ -63,14 +89,14 @@ public class FacebookLoginActivity extends Activity {
     
     public void authorize()
     {
-        facebook.authorize(this, new String[] { "email", "publish_checkins" }, new DialogListener(){
+        facebook.authorize(this, new String[] { "user_status", "user_photos", "friends_photos" }, new DialogListener(){
 
 			@Override
 			public void onComplete(Bundle values) {
                 SharedPreferences.Editor editor = mPrefs.edit();
                 editor.putString("access_token", facebook.getAccessToken());
                 editor.putLong("access_expires", facebook.getAccessExpires());
-                editor.commit();    				
+                editor.commit();
 			}
 
 			@Override
@@ -86,13 +112,6 @@ public class FacebookLoginActivity extends Activity {
 			}
         	
         });    	
-    }
-    
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-    	super.onActivityResult(requestCode, resultCode, data);
-    	
-    	facebook.authorizeCallback(requestCode, resultCode, data);
     }
     
     public void handleClick( View v )

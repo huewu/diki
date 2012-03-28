@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/edit_menu"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal" >
+    <RadioButton 
+        style="@style/Widget.Diki.Edit.Button"
+        android:checked="true"
+        android:id="@+id/move" 
+        android:button="@drawable/btn_bg_shape_selector"
+        android:text="Move" 
+        android:layout_weight="1"
+        android:layout_margin="12dp"
+        android:layout_width="match_parent" 
+        android:layout_height="match_parent"/>
+    
+    <RadioButton 
+        style="@style/Widget.Diki.Edit.Button"
+        android:id="@+id/text"
+        android:button="@drawable/btn_bg_shape_selector"
+        android:text="Text"
+        android:layout_weight="1"
+        android:layout_margin="12dp"
+        android:layout_width="match_parent" 
+        android:layout_height="match_parent"/>
+    
+    <RadioButton 
+        style="@style/Widget.Diki.Edit.Button"
+        android:id="@+id/pen"
+        android:button="@drawable/btn_bg_shape_selector"
+        android:text="Pen" 
+        android:layout_weight="1"
+        android:layout_margin="12dp"
+        android:layout_width="match_parent" 
+        android:layout_height="match_parent"/>
+        
+</RadioGroup>
